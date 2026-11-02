@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#faf9ff">
+  <meta name="description" content="Aprende las escalas mayores en piano con digitación, sonido, teclado interactivo y práctica guiada. Un proyecto de Musicala.">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>Escalas de piano · Musicala</title>
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Ir al contenido</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="brand" href="#explorar" aria-label="Musicala, inicio" id="brandLink">
+        <img class="brand-logo" src="assets/musicala-horizontal.png" alt="Musicala" width="690" height="201">
+        <span class="brand-caption">LABORATORIO DE PIANO</span>
+      </a>
+      <div class="sidebar-label">TU ESPACIO DE APRENDIZAJE</div>
+      <nav class="nav-list" aria-label="Secciones">
+        <button class="nav-item active" data-view="explorar" aria-current="page"><span class="nav-icon">◈</span><span>Explorar escalas</span></button>
+        <button class="nav-item" data-view="practicar"><span class="nav-icon">♫</span><span>Practicar</span><span class="nav-trail">↗</span></button>
+        <button class="nav-item" data-view="guia"><span class="nav-icon">▤</span><span>Mi guía musical</span></button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-progress" aria-live="polite">
+        <span class="tiny-label">TU RECORRIDO</span>
+        <div class="progress-top"><strong id="sidebarProgressText">0 de 5 escalas</strong><span class="tiny-sparkle">✦</span></div>
+        <div class="meter"><span id="sidebarProgressBar" style="width:0%"></span></div>
+        <small>Un paso, una nota, un logro.</small>
+      </div>
+      <div class="sidebar-foot">Hecho para aprender haciendo. <span>♡</span></div>
+    </aside>
+
+    <div class="main-wrap">
+      <header class="topbar">
+        <div class="topbar-path"><span class="topbar-symbol">✳</span><span>Musicala</span><span class="chevron">/</span><span>Laboratorio de piano</span></div>
+        <div class="topbar-right"><span class="online-dot" aria-hidden="true"></span><span>Aprende a tu ritmo</span><button class="circle-info" id="helpBtn" aria-label="Cómo usar la aplicación">?</button></div>
+      </header>
+      <main class="content" id="mainContent" tabindex="-1">
+        <section class="hero" aria-labelledby="heroTitle">
+          <div class="hero-copy">
+            <div class="hero-eyebrow"><span>✦</span> TU VIAJE MUSICAL COMIENZA AQUÍ</div>
+            <h1 id="heroTitle">Escalas de piano.<br><em>Escucha. Comprende. Practica.</em></h1>
+            <p>Aprende Do, Sol, Re, La y Mi mayor con notas, sonido y digitación para cada mano. Empieza por Do y avanza a tu ritmo.</p>
+            <div class="hero-actions"><button id="heroPractice" class="btn btn-dark"><span>Comenzar a practicar</span><span aria-hidden="true">↗</span></button><span class="hero-mini"><span class="mini-check">✓</span> Sin afán, a tu ritmo</span></div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit orbit-3"></div>
+            <div class="hero-disk"><span>♫</span></div><span class="art-star s1">✦</span><span class="art-star s2">✳</span><span class="art-star s3">✦</span>
+            <div class="hero-keys"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b><b></b><b></b><b></b><b></b></div>
+          </div>
+        </section>
+
+        <section class="view-section" id="view-explorar" aria-labelledby="exploreHeading">
+          <div class="section-heading section-heading-top"><div><div class="eyebrow">01 / CONOCE EL TECLADO</div><h2 id="exploreHeading">Empecemos por lo esencial <span>✷</span></h2></div><div class="section-tag">Nivel inicial · Primera digitación</div></div>
+          <ol class="learning-route" aria-label="Cómo empezar">
+            <li><span>1</span><div><strong>Elige y observa</strong><p>Empieza por Do mayor y elige una mano.</p></div></li>
+            <li><span>2</span><div><strong>Escucha despacio</strong><p>Sigue las notas y los números de los dedos.</p></div></li>
+            <li><span>3</span><div><strong>Pruébalo tú</strong><p>Practica en pantalla y luego en tu piano.</p></div></li>
+          </ol>
+          <div class="mode-cards" aria-label="Modos musicales">
+            <button class="mode-card selected" id="majorMode" aria-pressed="true"><span class="mode-symbol major">☀</span><span><strong>Modo mayor</strong><small>Brillante, abierto y lleno de posibilidades</small></span><span class="mode-label">EN CURSO <span aria-hidden="true">✓</span></span></button>
+            <button class="mode-card" id="minorMode" aria-pressed="false"><span class="mode-symbol minor">☾</span><span><strong>Modo menor · guía</strong><small>Otro color musical para explorar después</small></span><span class="mode-label mode-upcoming">CONOCE MÁS ↗</span></button>
+          </div>
+          <div class="chapter-heading"><div><div class="eyebrow">COLECCIÓN 01</div><h3>Primera digitación <span class="muted-count">/ 5 escalas</span></h3><p>La misma secuencia de dedos para estas cinco escalas mayores, tal como aparece en tu material de Musicala.</p></div><button class="text-action" id="whyFingerBtn">¿Qué es digitación? <span>↗</span></button></div>
+          <div class="scale-grid" id="scaleGrid" aria-label="Elegir escala"></div>
+          <div id="exploreStudio" class="studio-grid"></div>
+        </section>
+
+        <section class="view-section hidden" id="view-practicar" aria-labelledby="practiceHeading">
+          <div class="section-heading section-heading-top"><div><div class="eyebrow">02 / AHORA TE TOCA</div><h2 id="practiceHeading">Del oído a tus dedos <span>✷</span></h2><p class="section-description">Toca las notas en el orden correcto. Reconoce el orden de las notas con el teclado virtual. Luego lleva la digitación a tu piano.</p></div><div class="section-tag">Práctica interactiva</div></div>
+          <div class="practice-intro"><div class="practice-intro-icon">♫</div><div><strong>Una nota a la vez</strong><p>Haz clic en las teclas del piano o usa <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> <kbd>F</kbd> <kbd>G</kbd> <kbd>H</kbd> <kbd>J</kbd> <kbd>K</kbd> para las ocho notas de la escala seleccionada.</p></div></div>
+          <div class="practice-selector-wrap"><span class="tiny-label">ELIGE TU ESCALA</span><div class="practice-scale-pills" id="practiceScalePills"></div></div>
+          <div id="practiceStudio" class="practice-studio"></div>
+          <div class="practice-footnote">Una escala marcada indica que completaste la secuencia de notas en pantalla; la postura, los dedos y el ritmo se trabajan en el instrumento. Tu progreso se guarda en este navegador. El teclado virtual detecta las notas que tocas aquí, no las de un piano acústico externo.</div>
+        </section>
+
+        <section class="view-section hidden" id="view-guia" aria-labelledby="guideHeading">
+          <div class="section-heading section-heading-top"><div><div class="eyebrow">03 / EL PORQUÉ DE CADA NOTA</div><h2 id="guideHeading">Tu mapa musical <span>✷</span></h2><p class="section-description">Un poquito de teoría, la suficiente para que todo empiece a sonar con sentido.</p></div><div class="section-tag">Teoría sin enredos</div></div>
+          <div class="guide-grid"><article class="guide-card guide-intro"><span class="guide-numeral">01</span><div class="guide-symbol">♩</div><h3>¿Qué es una escala?</h3><p>Es una sucesión ordenada de notas. Al subir vamos de los sonidos graves a los agudos; al bajar recorremos el mismo camino al revés.</p><div class="guide-note">Una octava: de Do a Do, de Sol a Sol… ¡la misma nota, más aguda!</div></article>
+            <article class="guide-card"><span class="guide-numeral">02</span><div class="guide-symbol sun">☀</div><h3>Modo mayor</h3><p>Es uno de los dos grandes colores tonales. Solemos percibirlo como luminoso o estable, aunque también puede expresar muchas emociones.</p><div class="formula"><b>T</b><b>T</b><b class="half">S</b><b>T</b><b>T</b><b>T</b><b class="half">S</b></div><small>T = tono · S = semitono</small></article>
+            <article class="guide-card"><span class="guide-numeral">03</span><div class="guide-symbol moon">☾</div><h3>Modo menor</h3><p>Suele tener un carácter más introspectivo. Hay varias formas de escala menor; la natural sirve como punto de partida.</p><div class="formula minor-formula"><b>T</b><b class="half">S</b><b>T</b><b>T</b><b class="half">S</b><b>T</b><b>T</b></div><small>Patrón de la menor natural. La estudiaremos después.</small></article>
+            <article class="guide-card"><span class="guide-numeral">04</span><div class="guide-symbol">☝</div><h3>¿Qué es digitación?</h3><p>Es decidir qué dedo toca cada nota. Una digitación bien elegida facilita la fluidez, la coordinación y el movimiento natural de las manos.</p><div class="finger-legend"><span>1 <small>Pulgar</small></span><span>2 <small>Índice</small></span><span>3 <small>Medio</small></span><span>4 <small>Anular</small></span><span>5 <small>Meñique</small></span></div></article></div>
+          <div class="guide-footer"><div><span class="eyebrow">SIGUIENTE PASO</span><h3>De la teoría al sonido.</h3><p>Vuelve a las escalas y escucha el patrón mayor en acción.</p></div><button class="btn btn-dark" id="guideExplore">Explorar escalas ↗</button></div>
+        </section>
+        <footer class="main-footer"><img class="footer-logo" src="assets/musicala-horizontal.png" alt="Musicala" width="690" height="201"><span>Hecho para aprender, escuchar y crear.</span></footer>
+      </main>
+    </div>
+  </div>
+  <div class="toast" role="status" aria-live="polite" id="toast"></div>
+  <dialog id="helpDialog" class="help-dialog"><button class="dialog-close" id="closeHelp" aria-label="Cerrar">×</button><div class="dialog-icon">✦</div><h2>¡Hola, pianista!</h2><p>Este espacio transforma las escalas de Musicala en una experiencia para explorar y practicar.</p><ol><li><strong>Elige una escala:</strong> Do, Sol, Re, La o Mi mayor.</li><li><strong>Escúchala:</strong> reproduce y mira qué nota y dedo corresponden.</li><li><strong>Practícala:</strong> toca el piano virtual en orden y gana tu avance.</li></ol><p class="dialog-tip">El sonido se activa al interactuar con la página. Funciona sin micrófono y tu avance queda guardado en este dispositivo.</p><button class="btn btn-dark" id="dialogGotIt">¡Vamos a tocar! ↗</button></dialog>
+  <script src="app.js" defer></script>
+</body>
+</html>
